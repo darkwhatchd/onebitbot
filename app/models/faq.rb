@@ -1,5 +1,4 @@
 require "pg_search"
-<<<<<<< HEAD
 
 class Faq < ActiveRecord::Base
   include PgSearch
@@ -12,17 +11,3 @@ class Faq < ActiveRecord::Base
   # include PgSearch
   pg_search_scope :search, :against => [:question, :answer]
 end
-=======
- 
-class Faq < ActiveRecord::Base
-  include PgSearch
- 
-  validates_presence_of :question, :answer
- 
-  has_many :faq_hashtags
-  has_many :hashtags, through: :faq_hashtags
- 
-  # include PgSearch
-  pg_search_scope :search, :against => [:question, :answer]
-end
->>>>>>> b20da557606d7268a67f9b531cb645d218c5a878
