@@ -12,7 +12,6 @@ group :development do
   gem 'tux'
 end
 
-<<<<<<< HEAD
 gem 'database_cleaner'
 gem 'factory_bot'
 gem 'ffaker'
@@ -21,13 +20,3 @@ group :test do
   gem 'rack-test', require: 'rack/test'
   gem 'rspec'
 end
-=======
-gem "factory_bot"
-gem "ffaker"
-gem 'database_cleaner'
- 
-group :test do
-  gem "rack-test", require: "rack/test"
-  gem "rspec"
-end
->>>>>>> b20da557606d7268a67f9b531cb645d218c5a878
