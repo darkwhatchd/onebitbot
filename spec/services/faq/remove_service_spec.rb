@@ -30,4 +30,8 @@ describe FaqModule::RemoveService do
       end
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> b20da557606d7268a67f9b531cb645d218c5a878
