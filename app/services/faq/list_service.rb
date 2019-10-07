@@ -2,7 +2,7 @@ module FaqModule
   class ListService
     def initialize(params, action)
       @action = action
-      @query = params["query"]
+      @query = params['query']
     end
 
     def call
@@ -29,7 +29,7 @@ module FaqModule
         end
         response += "\n\n"
       end
-      (faqs.count > 0)? response : 'Nada encontrado'
+      faqs.count > 0? response : 'Nada encontrado'
     end
   end
 end

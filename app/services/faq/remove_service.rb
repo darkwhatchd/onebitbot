@@ -2,7 +2,7 @@ module FaqModule
   class RemoveService
     def initialize(params)
       @params = params
-      @id = params["id"]
+      @id = params['id']
     end
 
     def call
