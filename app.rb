@@ -1,19 +1,30 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'sinatra'
 require 'sinatra/activerecord'
 
 require './config/database'
 
-Dir["./app/models/*.rb"].each { |file| require file }
-Dir["./app/services/**/*.rb"].each { |file| require file }
+Dir['./app/models/*.rb'].each { |file| require file }
+Dir['./app/services/**/*.rb'].each { |file| require file }
 
 class App < Sinatra::Base
- 
+  configure do
+    enable :logging
+    file = File.new("#{settings.root}/log/#{settings.environment}.log", 'a+')
+    file.sync = true
+    use Rack::CommonLogger, file
+  end
+
   get '/' do
-    'Hello world!'   
+    puts 'Ola'
+    'Hello world!'
   end
 
   post '/webhook' do
+    $stdout.sync = true
+    logger.info 'hello'
     request.body.rewind
     result = JSON.parse(request.body.read)['queryResult']
 
@@ -24,6 +35,7 @@ class App < Sinatra::Base
     end
     content_type :json, charset: 'utf-8'
     {
+      "fulfillmentText": response,
       "payload": {
         "telegram": {
           "text": response,

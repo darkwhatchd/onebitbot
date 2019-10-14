@@ -8,6 +8,7 @@ gem 'rake', '<6'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 
+
 group :development do
   gem 'tux'
 end
