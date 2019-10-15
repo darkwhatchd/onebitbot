@@ -27,6 +27,7 @@ class App < Sinatra::Base
     logger.info 'hello'
     request.body.rewind
     result = JSON.parse(request.body.read)['queryResult']
+    
 
     if result['contexts'].present?
       response = InterpretService.call(result['action'], result['contexts'][0]['parameters'])
