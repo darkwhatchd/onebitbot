@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'activerecord', '<6'
 gem 'pg'
 gem 'pg_search', '~> 2.0.1'
-gem 'rake', '<6'
+gem 'rake', '<13'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 
